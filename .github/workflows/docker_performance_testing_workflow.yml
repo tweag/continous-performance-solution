@@ -6,7 +6,7 @@ env:
 jobs:
   action_build:
     runs-on: ubuntu-latest
-    steps:p;
+    steps:
       - uses: actions/checkout@v2
 
       - name: Run JMeter Action on a test

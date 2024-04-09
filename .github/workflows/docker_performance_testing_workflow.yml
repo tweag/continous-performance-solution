@@ -3,8 +3,14 @@ name: Jmeter - Performance Web App Tests
 env:
   PROJECT_LOCATION: ${{ github.workspace }}
 
+on:
+    schedule:
+        -   cron: '30 21 * * *'
+
 jobs:
   action_build:
+    if: github.event_name != 'schedule'
+    name: Manual - Execute JMeter Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

@@ -6,6 +6,12 @@ env:
 on:
     schedule:
         -   cron: '30 21 * * *'
+    workflow_dispatch:
+        inputs:
+            tags:
+                description: 'Tags'
+                required: false
+                default: 'jmeter'
 
 jobs:
   action_build:

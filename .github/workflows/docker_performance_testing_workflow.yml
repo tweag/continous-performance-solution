@@ -20,6 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: grafana/plugin-actions/build-plugin@release
+        with:
+           grafana_token: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }}
+
       - name: Run JMeter Action on a test
         uses: rbhadti94/apache-jmeter-action@v0.5.0
         with:

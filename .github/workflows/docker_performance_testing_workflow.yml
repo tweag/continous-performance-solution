@@ -24,6 +24,15 @@ jobs:
         with:
            grafana_token: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }}
 
+      - name: Setup InfluxDB
+        uses: influxdata/influxdb-action@v3
+        with:
+          influxdb_version: latest
+          influxdb_org: influxdata
+          influxdb_user: ci_user
+          influxdb_password: password
+          influxdb_bucket: dummy
+
       - name: Run JMeter Action on a test
         uses: rbhadti94/apache-jmeter-action@v0.5.0
         with:

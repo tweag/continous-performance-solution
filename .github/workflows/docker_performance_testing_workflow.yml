@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: grafana/plugin-actions/build-plugin@release
+      - uses: grafana/plugin-actions/build-plugin@main
         with:
            grafana_token: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }}
 

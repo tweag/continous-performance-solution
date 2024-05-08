@@ -24,7 +24,7 @@ services:
     ports:
       - "3000:3000"
   Jmeter:
-    image: ustb4/jmeter
+    image: justb4/jmeter
     ports:
       - "6565:6565"
     environment:

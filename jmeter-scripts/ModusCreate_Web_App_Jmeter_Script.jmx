@@ -5322,7 +5322,7 @@ yk4ï¿½ï¿½tLN&quot;;ï¿½Bï¿½ï¿½ï¿½]ï¿½&#xb;ï¿½,xjVï¿½&#x1a;ï¿½`5ï¿½ï¿½ï¿½9ï¿½ï¿½hï
             </elementProp>
             <elementProp name="influxdbUrl" elementType="Argument">
               <stringProp name="Argument.name">influxdbUrl</stringProp>
-              <stringProp name="Argument.value">http://localhost:8086/write?db=demo</stringProp>
+              <stringProp name="Argument.value">http://influxdb:8086/write?db=Jmeter</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="application" elementType="Argument">

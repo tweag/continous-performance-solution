@@ -40,7 +40,7 @@ jobs:
           outputReportsFolder: reports/
           args: "--loglevel DEBUG"
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: jmeter-test-results
           path: reports/

@@ -1,0 +1,46 @@
+name: Jmeter - Performance Mobile App Tests
+
+env:
+  PROJECT_LOCATION: ${{ github.workspace }}
+
+on:
+    schedule:
+        -   cron: '30 21 * * *'
+    workflow_dispatch:
+        inputs:
+            tags:
+                description: 'Tags'
+                required: false
+                default: 'jmeter'
+
+jobs:
+  action_build:
+    name: Execute JMeter Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+#      - uses: grafana/plugin-actions/build-plugin@main
+#        with:
+#           grafana_token: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }}
+
+#      - name: Setup InfluxDB
+#        uses: influxdata/influxdb-action@v3
+#        with:
+#          influxdb_version: latest
+#          influxdb_org: influxdata
+#          influxdb_user: ci_user
+#          influxdb_password: password
+#          influxdb_bucket: dummy
+
+      - name: Run JMeter Action on a test
+        uses: rbhadti94/apache-jmeter-action@v0.5.0
+        with:
+          testFilePath: jmeter-scripts/ModusCreate_Mobile_App_Jmeter_Script.jmx
+          outputReportsFolder: reports/
+          args: "--loglevel DEBUG"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jmeter-test-results
+          path: reports/
